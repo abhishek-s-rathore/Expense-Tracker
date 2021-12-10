@@ -1,0 +1,19 @@
+<% include partials/header %>
+<!-- Main -->
+<main class="signup container flex justify-start align-center flex-column">
+  <h1>Edit Expanse</h1>
+
+  <form action="/expense/editExpense/<%= expense._id %>"  method="POST">
+    <input type="text" name="expanse" value="<%= expense.expense  %>" placeholder="Expanse..." />
+    <input type="number" name="expenseAmount" value="<%= expense.expenseAmount %>" placeholder="Amount..." />
+    <input name='date' value="<%= moment(expense.date).format('DD/MM/YYYY') %>" placeholder="Date..." />
+    <input
+      style="color: white"
+      class="btn btn-secondary height"
+      type="submit"
+      value="Update Expanse"
+    />
+  </form>
+</main>
+
+<% include partials/footer %>

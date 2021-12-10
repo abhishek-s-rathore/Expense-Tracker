@@ -1,0 +1,36 @@
+<% include partials/header %>
+<!-- Main -->
+<main class="signup container flex justify-start align-center flex-column">
+  <h1>Sign Up</h1>
+  <% if(error){ %>
+  <p><%= error %></p>
+  <% } %>
+  <form action="/users/signup" , method="POST">
+    <input type="text" name="name" placeholder="Name..." />
+    <input type="text" name="email" placeholder="Email..." />
+    <input type="text" name="phone" placeholder="Phone..." />
+    <input type="text" name="dateOfBirth" placeholder="Birth Date..." />
+    <textarea name="address" rows="4" placeholder="Address..."></textarea>
+    <input type="password" name="password" placeholder="Password..." />
+    <input
+      style="color: white"
+      class="btn btn-secondary height"
+      type="submit"
+      value="Sign Up"
+    />
+  </form>
+  <h5 style="text-align: center; margin: 0.5rem">OR</h5>
+  <div>
+    <a href="/users/auth/google"
+      ><button style="margin-bottom: 0.5rem" class="btn btn-secondary">
+        Sign Up With <i class="fab fa-google"></i></button
+    ></a>
+    <br />
+    <a href="/users/auth/github"
+      ><button class="btn btn-secondary">
+        Sign Up With <i class="fab fa-github"></i></button
+    ></a>
+  </div>
+</main>
+
+<% include partials/footer %>

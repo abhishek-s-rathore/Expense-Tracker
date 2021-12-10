@@ -1,0 +1,19 @@
+<% include partials/header %>
+<!-- Main -->
+<main class="signup container flex justify-start align-center flex-column">
+  <h1>Edit Income</h1>
+
+  <form action="/income/editIncome/<%= income._id %>"  method="POST">
+    <input type="text" name="source" value="<%= income.source  %>"  placeholder="Income Source..." />
+    <input type="number" name="incomeAmount" value="<%= income.incomeAmount  %>"  placeholder="Amount..." />
+    <input name='date' value="<%= moment(income.date).format('DD/MM/YYYY')  %>"  placeholder="Date..." />
+    <input
+      style="color: white"
+      class="btn btn-secondary height"
+      type="submit"
+      value="Update Income"
+    />
+  </form>
+</main>
+
+<% include partials/footer %>

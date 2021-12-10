@@ -1,0 +1,162 @@
+<% include partials/header %>
+<!-- Main -->
+<div class="dashboard container flex justify-between align-start">
+  <aside class="flex-24">
+    <div>
+      <h2>Filter By Month</h2>
+      <form action="/dashboard/filter/byMonth" method="POST">
+        <label for="year"> Year: </label>
+        <select name="year" id="year">
+          <% yearArr.forEach(year=>{ %>
+          <option value="<%= year %>"><%= year %></option>
+          <% }) %>
+        </select>
+        <label for="month"> Month: </label>
+        <select name="month" id="month">
+          <option value="All">All</option>
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select>
+        <input class="btn btn-secondary" type="submit" id="Find" value="Find" />
+      </form>
+    </div>
+    <div>
+      <h2>Filter By Date</h2>
+      <form action="/dashboard/filter/byDate" method="POST">
+        <label for="startDate"> Start Date: </label>
+        <input name="startDate" id="startDate" type="Date" />
+        <label for="endDate"> End Date: </label>
+        <input name="endDate" id="endDate" type="Date" />
+        <input class="btn btn-secondary" type="Submit" value="Find" />
+      </form>
+    </div>
+    <div>
+      <h2>Filter By Income Type</h2>
+      <form action="/dashboard/filter/byIncomeType" method="POST">
+        <label for="incomeType">Income Type: </label>
+        <select name="incomeType" id="incomeType">
+          <option value="All">All</option>
+          <% incomeTypes.forEach(income=>{ %>
+          <option value="<%= income %>"><%= income %></option>
+          <% }) %>
+        </select>
+        <input class="btn btn-secondary" type="Submit" value="Find" />
+      </form>
+    </div>
+    <div>
+      <h2>Filter By Expense Type</h2>
+      <form action="/dashboard/filter/byExpenseType" method="POST">
+        <label for="expenseType"> Expense Type: </label>
+        <select name="expenseType" id="expanseType">
+          <option value="All">All</option>
+          <% expenseTypes.forEach(expense=>{ %>
+          <option value="<%= expense %>"><%= expense %></option>
+          <% }) %>
+        </select>
+        <input class="btn btn-secondary" type="Submit" value="Find" />
+      </form>
+    </div>
+    <div style="margin-bottom: 1rem">
+      <h2>Filter By Date And Categories</h2>
+      <form action="/dashboard/filter/mixed" , method="POST">
+        <label for="initialDate">Start Date: </label>
+        <input name="startDate" type="Date" id="initialDate" />
+        <label for="finalDate">End Date: </label>
+        <input name="endDate" type="Date" id="finalDate" />
+        <label for="incCategory">Income Category: </label>
+        <select name="incomeType" id="incCategory">
+          <option value="All">All</option>
+          <% incomeTypes.forEach(income=>{ %>
+          <option value="<%= income %>"><%= income %></option>
+          <% }) %>
+        </select>
+        <label for="expCategory">Expanse Category: </label>
+        <select name="expenseType" id="expCategory">
+          <option value="All">All</option>
+          <% expenseTypes.forEach(expense=>{ %>
+          <option value="<%= expense %>"><%= expense %></option>
+          <% }) %>
+        </select>
+        <input class="btn btn-secondary" type="Submit" value="Find" />
+      </form>
+    </div>
+  </aside>
+
+  <main class="flex-75">
+    <div style="border: none" class="flex justify-end align-center">
+     <a href='/dashboard'><i class="far fa-hand-point-left"></i></a> 
+    </div>
+
+    <section class="budget">
+      <h2
+        style="
+          text-align: center;
+          margin-bottom: 0.5rem;
+          font-weight: 600;
+          color: rgb(11, 11, 41);
+        "
+      >
+        <span><%= ipOne %></span>~<span><%= ipTwo %></span>
+      </h2>
+      <% if(budgetData.length){budgetData.forEach(budget=>{ %>
+      <!-- Line Break -->
+      <% if(budget.budget ==='Income'){ %>
+      <div style="color: green" class="flex justify-between align-center">
+        <p class="flex-20">Income</p>
+        <p class="flex-20"><%= budget.source %></p>
+        <p class="flex-20">₹<%= budget.incomeAmount %></p>
+        <p><%= moment( budget.date ).format('DD-MM-YYYY') %></p>
+        <p>
+          <a style="color: rgb(11, 11, 41); font-size: 0.9rem" href="/income/editIncome/<%= budget._id %>"
+            ><i class="far fa-edit"></i
+          ></a>
+          <a style="color: rgb(11, 11, 41); font-size: 0.9rem" href="/income/deleteIncome/<%= budget._id %>"
+            ><i class="far fa-trash-alt"></i
+          ></a>
+        </p>
+      </div>
+      <% }else if(budget.budget ==='Expense'){ %>
+      <div style="color: red" class="flex justify-between align-center">
+        <p class="flex-20">Expense</p>
+        <p class="flex-20"><%= budget.expense %></p>
+        <p class="flex-20">₹ <%= budget.expenseAmount %></p>
+        <p><%= moment( budget.date ).format('DD-MM-YYYY') %></p>
+        <p>
+          <a style="color: rgb(11, 11, 41); font-size: 0.9rem" href="/expense/editExpense/<%= budget._id %>"
+            ><i class="far fa-edit"></i
+          ></a>
+          <a style="color: rgb(11, 11, 41); font-size: 0.9rem" href="/expense/deleteExpense/<%= budget._id %>"
+          ><i class="far fa-trash-alt"></i></a>
+        </p>
+      </div>
+
+      <% }});}else{ %>
+            <h2>~No Data Present~</h2>
+      <% } %>
+    </section>
+
+    <div class="flex justify-center align-center add">
+      <i class="fas fa-plus"></i>
+    </div>
+    <div class="flex justify-center align-center flex-column add-New">
+      <a href="/income/newIncome"
+        ><button class="btn btn-secondary">Add Income</button></a
+      >
+      <a href="/expense/newExpense"
+        ><button class="btn btn-secondary">Add Expense</button></a
+      >
+    </div>
+  </main>
+</div>
+
+<% include partials/footer %>

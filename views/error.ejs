@@ -1,0 +1,13 @@
+<% include partials/header %>
+<!-- Main -->
+<main style="overflow: auto; height: 100vh" class="container">
+  <h1 style="text-align: center; color: rgb(28, 28, 78); margin-top: 6rem">
+    <%= message %>
+  </h1>
+  <h2 style="text-align: center; color: rgb(11, 12, 41)">
+    <%= error.status %>
+  </h2>
+  <pre> <%= error.stack %> </pre>
+</main>
+
+<% include partials/footer %>

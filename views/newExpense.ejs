@@ -1,0 +1,19 @@
+<% include partials/header %>
+<!-- Main -->
+<main class="signup container flex justify-start align-center flex-column">
+  <h1>Add Expense</h1>
+
+  <form action="/expense/addExpense" , method="POST">
+    <input type="text" name="expense" placeholder="Expense Category..." />
+    <input type="number" name="expenseAmount" placeholder="Amount..." />
+    <input name="date" onfocus="(this.type='date')" placeholder="Date..." />
+    <input
+      style="color: white"
+      class="btn btn-secondary height"
+      type="submit"
+      value="Add Expense"
+    />
+  </form>
+</main>
+
+<% include partials/footer %>

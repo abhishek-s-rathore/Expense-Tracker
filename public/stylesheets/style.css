@@ -1,0 +1,660 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.justify-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.justify-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.justify-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.justify-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.justify-evenly {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.align-start {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.align-end {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.align-between {
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+}
+
+.align-around {
+  -webkit-box-align: space-around;
+      -ms-flex-align: space-around;
+          align-items: space-around;
+}
+
+.align-evenly {
+  -webkit-box-align: space-evenly;
+      -ms-flex-align: space-evenly;
+          align-items: space-evenly;
+}
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex-18 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 18%;
+          flex: 0 1 18%;
+}
+
+.flex-20 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
+}
+
+.flex-24 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 24%;
+          flex: 0 1 24%;
+}
+
+.flex-30 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+}
+
+.flex-32 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 32%;
+          flex: 0 1 32%;
+}
+
+.flex-40 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 40%;
+          flex: 0 1 40%;
+}
+
+.flex-48 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 48%;
+          flex: 0 1 48%;
+}
+
+.flex-50 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+
+.flex-60 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%;
+}
+
+.flex-75 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 75%;
+          flex: 0 1 75%;
+}
+
+.flex-100 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+}
+
+/*Global*/
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  max-width: 1480px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.padding {
+  padding: 5rem 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Images */
+.font-0 {
+  font-size: 0;
+}
+
+.full-width {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Headings */
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.66rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.2rem;
+  outline: none;
+  border: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0b0b29;
+}
+
+.btn-primary:hover {
+  background-color: rgba(11, 11, 41, 0.9);
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #0b0b29;
+  padding: 0.4rem 1rem;
+  border-radius: 0.2rem;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(11, 11, 41, 0.9);
+}
+
+.header {
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header a {
+  margin: 0.25rem;
+}
+
+.home {
+  height: 100vh;
+}
+
+.home blockquote {
+  color: #1d1d64;
+  font-style: italic;
+}
+
+.signup {
+  height: 100vh;
+  padding-top: 8rem;
+}
+
+.signup h1 {
+  font-weight: 600;
+  color: rgba(11, 11, 41, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.signup p {
+  color: red;
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.signup form {
+  width: 40%;
+  padding: 1rem;
+  border: 1px solid #0b0b29;
+}
+
+.signup form input {
+  width: 100%;
+  height: 2rem;
+  border: none;
+  border-bottom: 1px solid #0b0b29;
+  margin-bottom: 0.5rem;
+  color: #0b0b29;
+}
+
+.signup form input::-webkit-input-placeholder {
+  color: #0b0b29;
+}
+
+.signup form input:-ms-input-placeholder {
+  color: #0b0b29;
+}
+
+.signup form input::-ms-input-placeholder {
+  color: #0b0b29;
+}
+
+.signup form input::placeholder {
+  color: #0b0b29;
+}
+
+.signup form input:focus {
+  outline: none;
+  border-bottom: 2px solid #0b0b29;
+}
+
+.signup form textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #0b0b29;
+  margin-bottom: 0.5rem;
+  color: #0b0b29;
+  letter-spacing: none;
+}
+
+.signup form textarea::-webkit-input-placeholder {
+  color: #0b0b29;
+  font-size: 0.7rem;
+  letter-spacing: 0;
+}
+
+.signup form textarea:-ms-input-placeholder {
+  color: #0b0b29;
+  font-size: 0.7rem;
+  letter-spacing: 0;
+}
+
+.signup form textarea::-ms-input-placeholder {
+  color: #0b0b29;
+  font-size: 0.7rem;
+  letter-spacing: 0;
+}
+
+.signup form textarea::placeholder {
+  color: #0b0b29;
+  font-size: 0.7rem;
+  letter-spacing: 0;
+}
+
+.signup form textarea:focus {
+  outline: none;
+  border-bottom: 2px solid #0b0b29;
+}
+
+.signup form .height {
+  margin-top: 0.5rem;
+  height: 1.6rem;
+}
+
+.signup div {
+  width: 40%;
+  padding: 1rem;
+  border: 1px solid #0b0b29;
+}
+
+.signup div button {
+  width: 100%;
+}
+
+.dashboard aside {
+  height: 100vh;
+  border-right: 2px solid #0b0b29;
+  padding-top: 5rem;
+  overflow: auto;
+}
+
+.dashboard aside::-webkit-scrollbar {
+  display: none;
+}
+
+.dashboard form input {
+  width: 100%;
+  height: 1.7rem;
+  border: 1px solid #0b0b29;
+  border-radius: 0.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard form select {
+  width: 100%;
+  height: 1.7rem;
+  border: 1px solid #0b0b29;
+  margin-bottom: 0.25rem;
+  border-radius: 0.15rem;
+  background-color: white;
+}
+
+.dashboard div {
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border-bottom: 2px solid #0b0b29;
+}
+
+.dashboard h2 {
+  text-align: center;
+  font-style: italic;
+  color: tomato;
+  font-size: 1.5rem;
+}
+
+.dashboard main {
+  padding-top: 5rem;
+}
+
+.dashboard main .filters {
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #0b0b29;
+}
+
+.dashboard main .filters form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard main .filters input {
+  height: 1.5rem;
+  margin: 0.25rem;
+}
+
+.dashboard main .filters select {
+  border: 1px solid #0b0b29;
+  height: 1.5rem;
+  margin: 0.25rem;
+  border-radius: 0.2rem;
+}
+
+.dashboard main .filters label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0b0b29;
+  height: 1.5rem;
+  margin: 0.25rem;
+}
+
+.dashboard main section div {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #0b0b29;
+  padding: 0.25rem;
+}
+
+.dashboard main .budget {
+  height: 74vh;
+  overflow: auto;
+}
+
+.dashboard main .budget::-webkit-scrollbar {
+  display: hidden;
+}
+
+.dashboard main .add {
+  width: 3.2rem;
+  height: 3.2rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  position: absolute;
+  background-color: #0b0b29;
+  color: white;
+  border-radius: 50%;
+  right: 2rem;
+  bottom: 2rem;
+}
+
+.dashboard main .add:hover ~ .add-New {
+  display: inline-block;
+}
+
+.dashboard main .add-New {
+  position: absolute;
+  border: 1px solid #0b0b29;
+  border-radius: 0.5rem;
+  right: 5.3rem;
+  bottom: 1.6rem;
+  padding: 1rem;
+  display: none;
+}
+
+.dashboard main .add-New button {
+  width: 7rem;
+}
+
+.dashboard main .add-New:hover {
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */

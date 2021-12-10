@@ -1,0 +1,31 @@
+<% include partials/header %>
+<!-- Main -->
+<main class="home container flex justify-between align-center">
+  <div class="flex-48 flex justify-between align-center flex-column">
+    <img
+      class="full-width"
+      src="/images/expanse-tracker-logo.png"
+      alt="Expanse Logo"
+    />
+    <blockquote>
+      Beware Of Little Expenses, A Small Leak Will Sink A Great Ship...!
+    </blockquote>
+    <blockquote>So, Manage Your Expenses Here In A Better Way....</blockquote>
+  </div>
+  <div class="flex-48 flex justify-center align-center">
+    <%  if(user){ %>
+    <a href="/dashboard"
+      ><button style="font-size: 1rem" class="btn btn-primary">
+        Manage Your Budget...
+      </button></a
+    >
+    <%} else{%>
+      <a href="/users/signin"
+      ><button style="font-size: 1rem" class="btn btn-primary">
+        Manage Your Budget...
+      </button></a
+    >
+      <% }%>
+  </div>
+</main>
+<% include partials/footer %>
